@@ -12,7 +12,14 @@ import "./App.css";
 // import ConditionClass from "./components/UseEffect/conditionallyRun/class";
 // import ConditionHooks from "./components/UseEffect/conditionallyRun/hooks";
 // import HookMouse from "./components/UseEffect/OnlyOnce/HooksMouse";
-import MouseContainer from "./components/UseEffect/Unmount/MouseContainer";
+// import MouseContainer from "./components/UseEffect/Unmount/MouseContainer";
+// import IntervalHookCounter from "./components/UseEffect/IncorrectDependency/Dependency";
+// import DataFetching from "./components/DataFetching/DataFetching";
+// import DataFetchingWithId from "./components/DataFetching/DataFetchingWithId";
+import ComponentC from "./components/Usecontext/ComponentsExample/ComponentC";
+
+export const UserContext = React.createContext();
+export const ChannelContext = React.createContext();
 
 function App() {
   return (
@@ -31,7 +38,15 @@ function App() {
       {/* <ConditionClass /> */}
       {/* <ConditionHooks /> */}
       {/* <HookMouse /> */}
-      <MouseContainer />
+      {/* <MouseContainer /> */}
+      {/* <IntervalHookCounter /> */}
+      {/* <DataFetching /> */}
+      {/* <DataFetchingWithId /> */}
+      <UserContext.Provider value={"Nishekh"}>
+        <ChannelContext.Provider value={"working in home"}>
+          <ComponentC />
+        </ChannelContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
